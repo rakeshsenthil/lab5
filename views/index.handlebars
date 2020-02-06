@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/hci-friends.css">
+	<meta name="viewport" content="width=device-width,intial-scale=1.0"
 </head>
 
 <body>
@@ -17,11 +18,21 @@
 
 	<h1>My HCI Friends</h1>
 
-	<div class="fake-friend">
+	<!-- <div class="fake-friend">
     <img src="http://lorempixel.com/500/500/people" alt="sometext" />
 		<h3>Fake Friend</h3>
     <p>All my friends are imaginary.</p>
-</div>
+</div> -->
+
+	{{#each friends}}
+      <div class="img-responsive" id="{{id}}">
+        <a href="index/{{data}}" class="thumbnail">
+          <img src={{imageURL}} alt="sometext" class="img-responsive" .../>
+          <a><h3>{{name}}</h3> href="#"/>
+					<p>{{description}}</p>
+        </a>
+      </div>
+    {{/each}}
 
 	<form id="addFriendForm" role="form" method="get" action="/add">
 		<h3>Add a friend</h3>
