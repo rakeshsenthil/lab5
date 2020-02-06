@@ -47,4 +47,4 @@ function anagrammedName(name) {
 	}
 }
 
-$(".name").html(anagrammedName);
+$(".name").click(anagrammedName(name));
